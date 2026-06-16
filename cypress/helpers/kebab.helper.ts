@@ -1,4 +1,5 @@
 import { kebabCase } from "change-case";
+declare const require: (moduleName: string) => (value: string) => string;
 const removeAccents = require("remove-accents");
 
 export const unaccentedKebabCase = (str: string): string =>
@@ -6,5 +7,5 @@ export const unaccentedKebabCase = (str: string): string =>
 
 export const toCyString = (value: string) =>
   unaccentedKebabCase(value)
-    .substring(0, 16)
+    .substring(0, 32)
     .replace(/^[-]+|[-]+$/g, "");

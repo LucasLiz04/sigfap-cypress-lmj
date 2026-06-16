@@ -1,0 +1,29 @@
+{
+  "endereco": {
+    "cep": "79070-900",
+    "logradouro": "Avenida Costa e Silva",
+    "numero": "1",
+    "complemento": "Bloco de testes VV&T",
+    "bairro": "Universitario",
+    "estado": "Mato Grosso do Sul",
+    "municipio": "Campo Grande"
+  },
+  "dadosAcademicos": {
+    "instituicao": "Universidade Federal de Mato Grosso do Sul",
+    "unidade": "Faculdade de Computacao",
+    "nivelAcademico": "Doutorado",
+    "lattes": "http://lattes.cnpq.br/1234567890123456",
+    "linkedin": "https://www.linkedin.com/in/sigfap-cypress"
+  },
+  "dadosProfissionais": {
+    "possuiVinculoInstitucional": true,
+    "tipoVinculoInstitucional": "Servidor",
+    "regimeTrabalho": "Dedicação Exclusiva",
+    "inicioServico": "01/02/2020",
+    "funcao": "Professor",
+    "possuiVinculoEmpregaticio": true
+  },
+  "documentosPessoais": {
+    "arquivo": "cypress/fixtures/anexo-teste.pdf"
+  }
+}
