@@ -235,6 +235,26 @@ const goToNextProposalSection = () => {
   cy.byCy("next-button").click();
 };
 
+const openProposalSection = (sectionName: string) => {
+  cy.contains(sectionName, { timeout: 10000 }).click({ force: true });
+  cy.contains(sectionName, { timeout: 10000 }).should("be.visible");
+};
+
+const selectProposalAttachment = (filePath: string) => {
+  cy.get("body").then(($body) => {
+    if ($body.find('[data-cy="documentoPropostaAnexo"]').length) {
+      return cy
+        .byCy("documentoPropostaAnexo", { timeout: 10000 })
+        .selectFile(filePath, { force: true });
+    }
+
+    // O upload de anexo pode nao expor data-cy no input nativo; usa o input file semantico.
+    return cy
+      .get('input[type="file"]', { timeout: 10000 })
+      .selectFile(filePath, { force: true });
+  });
+};
+
 describe("Submissão de Proposta em edital vigente", () => {
   beforeEach(() => {
     cy.loginSigfap();
@@ -272,24 +292,27 @@ describe("Submissão de Proposta em edital vigente", () => {
     goToNextProposalSection();
     goToNextProposalSection();
 
-    // As perguntas descritivas do edital sao dinamicas; quando nao ha data-cy fixo
-    // por pergunta, o JSON Forms expoe data-cy com prefixo formularioPropostaDescritiva.
-    cy.get('[data-cy^="formularioPropostaDescritiva"]')
+    // A pergunta descritiva dinamica nao expoe data-cy no ambiente.
+    // Usa o rotulo da pergunta e o textarea semantico como alternativa estavel.
+    cy.contains(/Pergunta Edital .*M[ií]nimo 10.*M[aá]ximo 20 caracteres/, {
+      timeout: 10000,
+    })
+      .parents()
+      .filter((_, element) => Cypress.$(element).find("textarea").length > 0)
+      .first()
+      .find("textarea")
       .first()
       .clear({ force: true })
       .type(proposta.apresentacao.textoDescritivo, { force: true });
     cy.saveCurrentStep();
 
-    goToNextProposalSection();
-    goToNextProposalSection();
+    openProposalSection("Anexos");
+    openProposalSection("Documentos da proposta");
 
-    cy.byCy("documentoPropostaAnexo", { timeout: 10000 }).selectFile(
-      proposta.anexos.arquivo,
-      { force: true },
-    );
+    selectProposalAttachment(proposta.anexos.arquivo);
     cy.saveCurrentStep();
 
-    goToNextProposalSection();
+    openProposalSection("Finalização");
     cy.intercept("GET", "**/api/proposta/minhas-propostas/*/evaluations").as(
       "pendencyRequest",
     );
