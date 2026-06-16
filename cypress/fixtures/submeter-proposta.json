@@ -1,0 +1,22 @@
+{
+  "edital": {
+    "id": 33,
+    "nome": "Edital 2026-0001 Sig Cypress"
+  },
+  "caracterizacao": {
+    "titulo": "Proposta automatizada Cypress VV&T",
+    "duracao": 12,
+    "tipoEvento": "Workshop",
+    "estadoExecucao": "Acre",
+    "municipioExecucao": "Acrelândia",
+    "instituicaoExecutora": "BBBB/AAAA",
+    "unidadeExecutora": "AAAAAA/AAAA"
+  },
+  "apresentacao": {
+    "textoDescritivo": "Texto preenchido automaticamente para validar a jornada de submissao de proposta no SIGFAP.",
+    "producao": "Producao tecnica usada na massa de testes Cypress."
+  },
+  "anexos": {
+    "arquivo": "cypress/fixtures/anexo-teste.pdf"
+  }
+}

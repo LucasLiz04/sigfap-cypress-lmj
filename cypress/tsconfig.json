@@ -3,7 +3,8 @@
     "target": "es6",
     "lib": ["es6", "dom"],
     "sourceMap": true,
-    "types": ["cypress", "node", "cypress-real-events"]
+    "types": ["cypress", "cypress-real-events"],
+    "skipLibCheck": true
   },
   "include": ["**/*.ts"]
 }
