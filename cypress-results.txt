@@ -1,0 +1,157 @@
+
+================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        15.17.0                                                                        │
+  │ Browser:        Chrome 148 (headless)                                                          │
+  │ Node Version:   v22.17.0 (/home/lucasliz/.nvm/versions/node/v22.17.0/bin/node)                 │
+  │ Specs:          3 found (completar-cadastro.cy.ts, criar-conta.cy.ts, submeter-proposta.cy.ts) │
+  │ Searched:       cypress/e2e/**/*.cy.{js,jsx,ts,tsx}                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  completar-cadastro.cy.ts                                                        (1 of 3)
+
+
+  Finalização do Cadastro do proponente
+    ✓ F-01/F-02 - autentica e navega ate a area de perfil do proponente (13683ms)
+    ✓ F-03/F-04/F-05 - valida mascara, obrigatoriedade e persistencia do endereco (7686ms)
+    ✓ F-02/F-05 - preenche e persiste dados academicos (7610ms)
+    ✓ F-02/F-05 - preenche e persiste dados profissionais (5147ms)
+    ✓ F-02/F-05 - submete documento pessoal do proponente (6877ms)
+
+
+  5 passing (41s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     41 seconds                                                                       │
+  │ Spec Ran:     completar-cadastro.cy.ts                                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  criar-conta.cy.ts                                                               (2 of 3)
+
+
+  Criação de conta no sistema
+    Criação de conta com dados válidos
+      1) Teste para criação de conta com dados válidos
+      ✓ Visita a página inicial usando as credenciais do usuário na fixture (3362ms)
+
+
+  1 passing (13s)
+  1 failing
+
+  1) Criação de conta no sistema
+       Criação de conta com dados válidos
+         Teste para criação de conta com dados válidos:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `.css-kh7nmy`, but never found it.
+      at Context.eval (webpack:///./cypress/e2e/criar-conta.cy.ts:19:11)
+      at getRet (https://novo-sig.homolog.ledes.net/__cypress/runner/cypress_runner.js:123004:20)
+      at tryCatcher (https://novo-sig.homolog.ledes.net/__cypress/runner/cypress_runner.js:1777:23)
+      at Promise.attempt.Promise.try (https://novo-sig.homolog.ledes.net/__cypress/runner/cypress_runner.js:4285:29)
+      at Context.thenFn (https://novo-sig.homolog.ledes.net/__cypress/runner/cypress_runner.js:123015:66)
+      at Context.then (https://novo-sig.homolog.ledes.net/__cypress/runner/cypress_runner.js:123266:21)
+      at wrapped (https://novo-sig.homolog.ledes.net/__cypress/runner/cypress_runner.js:146625:19)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     13 seconds                                                                       │
+  │ Spec Ran:     criar-conta.cy.ts                                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /home/lucasliz/dev/trab_vvt/sigfap-cypress/cypress/screenshots/criar-conta.cy.ts     (1280x633)
+     /Criação de conta no sistema -- Criação de conta com dados válidos -- Teste para               
+      criação de conta com dados válidos (failed).png                                               
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  submeter-proposta.cy.ts                                                         (3 of 3)
+
+
+  Submissão de Proposta em edital vigente
+    ✓ F-01/F-06/F-07 - autentica, encontra edital vigente e inicializa proposta (16694ms)
+    ✓ F-08/F-09 - reabre proposta em edicao e navega entre secoes (15691ms)
+    1) F-10/F-11 - valida anexos e verificacao de pendencias antes da submissao
+    - F-12 - submete definitivamente a proposta somente quando RUN_SUBMISSION=true
+
+
+  2 passing (1m)
+  1 pending
+  1 failing
+
+  1) Submissão de Proposta em edital vigente
+       F-10/F-11 - valida anexos e verificacao de pendencias antes da submissao:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy^="formularioPropostaDescritiva"]`, but never found it.
+      at Context.eval (webpack:///./cypress/e2e/submeter-proposta.cy.ts:277:7)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      1                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 minute, 7 seconds                                                              │
+  │ Spec Ran:     submeter-proposta.cy.ts                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /home/lucasliz/dev/trab_vvt/sigfap-cypress/cypress/screenshots/submeter-proposta     (1280x633)
+     .cy.ts/Submissão de Proposta em edital vigente -- F-10F-11 - valida anexos e ver               
+     ificacao de pendencias antes da submissao (failed).png                                         
+
+
+================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  completar-cadastro.cy.ts                 00:41        5        5        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✖  criar-conta.cy.ts                        00:13        2        1        1        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✖  submeter-proposta.cy.ts                  01:07        4        2        1        1        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✖  2 of 3 failed (67%)                      02:02       11        8        2        1        -  
+
